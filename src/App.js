@@ -19,9 +19,6 @@ class App extends Component {
       const venues = results.response.venues;
       const markers = venues.map(venue => venue.location);
       const center = results.response.geocode.feature.geometry.center;
-      console.log(venues);
-      console.log(markers);
-      console.log(center);
       this.setState({ venues, markers, center });
     });
   }
