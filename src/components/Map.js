@@ -13,10 +13,10 @@ const MyMapComponent = withScriptjs(
       defaultCenter={{ lat: 33.651155, lng: -117.744094 }}
       center={props.center}
     >
-      if (props.markers)
-      {props.markers.map((marker, index) => (
-        <Marker key={index} position={{ lat: marker.lat, lng: marker.lng }} />
-      ))}
+      {props.markers &
+        props.markers.map((marker, index) => (
+          <Marker key={index} position={{ lat: marker.lat, lng: marker.lng }} />
+        ))}
     </GoogleMap>
   ))
 );
