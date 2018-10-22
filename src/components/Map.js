@@ -15,33 +15,40 @@ const MyMapComponent = withScriptjs(
       center={props.center}
     >
       {props.markers &&
-        props.markers.map((marker, index) => {
-          const venueProps = props.venues.find(venue => venue.id === marker.id);
-          console.log(venueProps);
-          return (
-            <Marker
-              key={index}
-              position={{ lat: marker.location.lat, lng: marker.location.lng }}
-              onClick={() => props.markerClick(marker)}
-            >
-              {marker.isOpen &&
-                venueProps.bestPhoto && (
-                  <InfoWindow>
-                    <React.Fragment>
-                      <img
-                        src={`${venueProps.bestPhoto.prefix}200x200${
-                          venueProps.bestPhoto.suffix
-                        }`}
-                        alt={'venue image'}
-                      />
-                      <p>{venueProps.name}</p>
-                      <p>{`Price: ${venueProps.price.message}`}</p>
-                    </React.Fragment>
-                  </InfoWindow>
-                )}
-            </Marker>
-          );
-        })}
+        props.markers
+          .filter(marker => marker.isVisible)
+          .map((marker, index) => {
+            const venueProps = props.venues.find(
+              venue => venue.id === marker.id
+            );
+            console.log(venueProps);
+            return (
+              <Marker
+                key={index}
+                position={{
+                  lat: marker.location.lat,
+                  lng: marker.location.lng
+                }}
+                onClick={() => props.markerClick(marker)}
+              >
+                {marker.isOpen &&
+                  venueProps.bestPhoto && (
+                    <InfoWindow>
+                      <React.Fragment>
+                        <img
+                          src={`${venueProps.bestPhoto.prefix}200x200${
+                            venueProps.bestPhoto.suffix
+                          }`}
+                          alt={'venue image'}
+                        />
+                        <p>{venueProps.name}</p>
+                        <p>{`Price: ${venueProps.price.message}`}</p>
+                      </React.Fragment>
+                    </InfoWindow>
+                  )}
+              </Marker>
+            );
+          })}
     </GoogleMap>
   ))
 );

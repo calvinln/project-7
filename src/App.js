@@ -15,6 +15,11 @@ class App extends Component {
     this.markerClick = this.markerClick.bind(this);
     this.closeMarkers = this.closeMarkers.bind(this);
     this.venueClick = this.venueClick.bind(this);
+    this.setSuperState = this.setSuperState.bind(this);
+  }
+
+  setSuperState(state) {
+    this.setState(state);
   }
 
   closeMarkers() {
@@ -64,7 +69,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Sidebar {...this.state} venueClick={this.venueClick} />
+        <Sidebar
+          {...this.state}
+          venueClick={this.venueClick}
+          setSuperState={this.setSuperState}
+        />
         <Map {...this.state} markerClick={this.markerClick} />
       </div>
     );
