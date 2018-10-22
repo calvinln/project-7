@@ -40,7 +40,7 @@ class App extends Component {
       this.setState({
         venues: Object.assign(this.state.venues, updatedVenue)
       });
-      console.log(this.state.venues);
+      // console.log(this.state.venues);
     });
   }
 
@@ -50,7 +50,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(FourSquare.getURL('search'));
+    // console.log(FourSquare.getURL('search'));
     FourSquare.getURL('search').then(results => {
       const venues = results.response.venues;
       const markers = venues.map(venue => {

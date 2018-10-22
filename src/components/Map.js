@@ -14,6 +14,7 @@ const MyMapComponent = withScriptjs(
       defaultCenter={{ lat: 33.651155, lng: -117.744094 }}
       center={props.center}
     >
+      {/*Make sure markers exist and that we only create markers that are visible*/}
       {props.markers &&
         props.markers
           .filter(marker => marker.isVisible)
@@ -21,7 +22,6 @@ const MyMapComponent = withScriptjs(
             const venueProps = props.venues.find(
               venue => venue.id === marker.id
             );
-            console.log(venueProps);
             return (
               <Marker
                 key={index}
