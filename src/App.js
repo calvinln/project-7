@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from './components/Map';
 import FourSquare from './API/index-fourSQ';
+import Sidebar from './components/Sidebar';
 
 class App extends Component {
   constructor() {
@@ -12,10 +13,11 @@ class App extends Component {
       center: []
     };
     this.markerClick = this.markerClick.bind(this);
-    this.closeAllMarkers = this.closeAllMarkers.bind(this);
+    this.closeMarkers = this.closeMarkers.bind(this);
+    this.venueClick = this.venueClick.bind(this);
   }
 
-  closeAllMarkers() {
+  closeMarkers() {
     const markers = this.state.markers.map(marker => {
       marker.isOpen = false;
       return marker;
@@ -24,7 +26,7 @@ class App extends Component {
   }
 
   markerClick(marker) {
-    this.closeAllMarkers();
+    this.closeMarkers();
     marker.isOpen = true;
     this.setState({ markers: Object.assign(this.state.markers, marker) });
     let currentVenue = this.state.venues.find(venue => venue.id === marker.id);
@@ -35,6 +37,11 @@ class App extends Component {
       });
       console.log(this.state.venues);
     });
+  }
+
+  venueClick(venue) {
+    const marker = this.state.markers.find(marker => marker.id === venue.id);
+    this.markerClick(marker);
   }
 
   componentDidMount() {
@@ -57,6 +64,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Sidebar {...this.state} venueClick={this.venueClick} />
         <Map {...this.state} markerClick={this.markerClick} />
       </div>
     );

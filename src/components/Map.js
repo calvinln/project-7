@@ -54,7 +54,7 @@ class Map extends Component {
         isMarkerShown
         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyD4YaWAb_bndQH5G39TYBg1oXR5JkHHDuc"
         loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `1020px` }} />}
+        containerElement={<div style={{ height: `100%`, width: `75%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
       />
     );
