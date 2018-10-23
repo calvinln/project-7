@@ -14,6 +14,12 @@ You can find the most recent version of this guide [here](https://github.com/fac
 - Grow with Google Slack fend proj 7 channel
 - amazing codehort fend Slack channel
 
+## To run
+- git clone the repository
+- cd into repository
+- run `npm install`
+- run `npm start` 
+
 ## Notes
 - FourSquare API client id and client secret are included
 - GoogleMaps API key is included
