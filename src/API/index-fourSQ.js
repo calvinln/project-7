@@ -3,7 +3,7 @@ class FourSquare {
     return fetch(
       'https://api.foursquare.com/v2/venues/' +
         endpoint +
-        '?near=Irvine,CA&query=chinese&limit=5&client_id=T0SRNGVDIIWOI2SDWLQAPRNFKDZJJUXEG100I0A1ZK4QHDVP&client_secret=MVFMYTMUVWHISANRBL4NWUNBRONHXQDDYDGWHYMUWYZVMJNY&v=20181020'
+        '?near=Irvine,CA&query=tacos&limit=5&client_id=Y2F0DPVEWZLIVSMKZP0MHHEURMRQV3Z3I115ANTEQFXKGZOV&client_secret=HIBDR4CWFZNUTTRIR0HESSZUCWLGDQ3LSOY1OGPIVBD0D52P&v=20181022'
     ).then(resp => resp.json());
   }
 }

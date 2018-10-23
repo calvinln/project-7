@@ -4,11 +4,21 @@
   width: 100vw;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+}
+
+.venue {
+  background-color: lightblue;
+  border-radius: 4px;
+}
+
+.map-container {
+  width: 75%;
+  height: 100%;
 }
 
 .sidebar {
   width: 25%;
+  background-color: lightgrey;
 }
 
 .inputField {
@@ -51,5 +61,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .sidebar {
+    display: none;
+  }
+
+  .map-container {
+    width: 100%;
   }
 }
