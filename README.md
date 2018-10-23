@@ -3,6 +3,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
+## Goals
+- This is my project 7 for the Udacity FEND
+- Use react, googlemaps API, and FourSquare API to create a map that displays taco restaurants with markers and a sidebar to filter the set options
+
+## Acknowledgements
+- Ryan Waite [`Project Walkthrough`] (https://www.youtube.com/watch?v=LvQe7xrUh7I&t=1766s)
+- Forrest Walker [`Project Walkthrough`] (https://www.youtube.com/watch?v=ktc8Gp9jD1k)
+- Stackoverflow [`React this.setState is undefined`](https://stackoverflow.com/questions/45384267/react-this-setstate-is-undefined)
+- Grow with Google Slack fend proj 7 channel
+- amazing codehort fend Slack channel
+
+## Notes
+- FourSquare API client id and client secret are included
+- GoogleMaps API key is included
+- If the keys do not work, register accounts with the respective APIs and generate your own key
+
 ## Table of Contents
 
 - [Updating to New Releases](#updating-to-new-releases)
